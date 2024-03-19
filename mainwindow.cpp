@@ -23,13 +23,20 @@ QDataStream& operator <<(QDataStream& ostream, const person_t& c)
     return ostream;
 }
 
- //  Описываем, как считывать из потока каждый объект класса circle:
 QDataStream& operator >> (QDataStream& istream, const person_t& c)
 {
     istream >> c.first_name >> c.last_name >> c.phone_number;
     return istream;
 }
 
+bool is_phone_number_valid(QString phone_number)
+{
+    for (QChar i : phone_number)
+        for(int j = 48; j < 58; j++)
+            if(i != QChar(j))
+                return false;
+    return true;
+}
 
 void MainWindow::writeContact(const person_t &person)
 {

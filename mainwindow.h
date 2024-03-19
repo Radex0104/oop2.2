@@ -15,8 +15,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    bool is_phone_number_valid(std::string  phone_number);
-    bool is_name_valid(std::string first_name, std::string last_name);
+    bool is_phone_number_valid(QString phone_number);
+    bool is_name_valid(QString first_name, QString last_name);
     void SaveContact();
     void DisplayContact();
     struct person_t {QString first_name;
