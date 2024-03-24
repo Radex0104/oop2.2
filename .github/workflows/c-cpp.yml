@@ -12,16 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Install Qt
+      - name: Install Qt and g++
         run: |
           sudo apt-get update
-          sudo apt-get install qt5-default
-
-      - name: Install g++
-        run: sudo apt-get update && sudo apt-get install g++
+          sudo apt-get install qtbase5-dev g++
+          sudo apt-get install qt5-qmake
 
       - name: Compile and Run tests.cpp
         run: |
-          qmake telbook.pro
+          qmake tests.pro
           make
           ./tests
