@@ -1,3 +1,4 @@
+#include "mainwindow.h"
 #include<QFile>
 bool is_phone_number_valid(QString phone_number)
 {
