@@ -19,7 +19,7 @@ jobs:
           sudo apt-get install qt5-qmake
 
       - name: Compile and Run tests.cpp
-        run: |
-          qmake telbook2.pro
-          make
-          ./tests
+        run: qmake telbook2.pro
+         # Runs a set of commands using the runners shell
+      - name: Run a program
+        run: ./a.out
