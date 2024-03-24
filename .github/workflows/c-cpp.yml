@@ -20,6 +20,6 @@ jobs:
 
       - name: Compile and Run tests.cpp
         run: |
-          qmake tests.cpp
+          qmake telbook.pro tests.cpp
           make
           ./tests
