@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "tests.cpp"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -17,38 +18,6 @@ struct person_t {QString first_name;
                  QString last_name;
                  QString  phone_number;};
 
-bool MainWindow::is_phone_number_valid(QString phone_number)
-{
-    for (QChar i : phone_number)
-        if(!i.isDigit())
-            return false;
-    return true;
-}
-
-bool MainWindow::is_name_valid(QString first_name)
-{
-    for (QChar i : first_name)
-        if(!i.isLetter())
-            return false;
-    return true;
-}
-
-bool MainWindow::is_lastname_valid(QString last_name)
-{
-    for (QChar i : last_name)
-        if(!i.isLetter())
-            return false;
-    return true;
-}
-void MainWindow::tests()
-{
-    QFile file("db.txt");
-    assert(is_phone_number_valid("1234567890"));
-    assert(is_name_valid("Данил"));
-    assert(is_name_valid("Danil"));
-    assert(is_lastname_valid("Скуратов"));
-    assert(is_lastname_valid("Skuratov"));
-}
 void MainWindow::SaveContact(const person_t &person)
 {
     QFile file("db.txt");

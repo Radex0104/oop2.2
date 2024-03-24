@@ -15,11 +15,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    bool is_phone_number_valid(QString phone_number);
-    bool is_name_valid(QString first_name);
-    bool is_lastname_valid(QString last_name);
+//    bool is_phone_number_valid(QString phone_number);
+//    bool is_name_valid(QString first_name);
+//    bool is_lastname_valid(QString last_name);
     void DisplayContact();
-    void tests();
+//    void tests();
     struct person_t {QString first_name;
                      QString last_name;
                      QString  phone_number;};
